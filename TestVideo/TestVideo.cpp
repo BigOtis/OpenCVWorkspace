@@ -66,7 +66,7 @@ int main(int, char**)
 		BGRChannels[0] = Mat::zeros(color.rows, color.cols, CV_8UC1);// removing Green channel
 		BGRChannels[2] = Mat::zeros(color.rows, color.cols, CV_8UC1);// removing Green channel
 		merge(BGRChannels, 3, color); // pack the image 
-
+		// minor change
 		// show live and wait for a key with timeout long enough to show images
 		imshow("Live", color);
 		if (waitKey(5) >= 0)
