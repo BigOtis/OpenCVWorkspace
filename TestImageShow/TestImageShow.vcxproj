@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{70E7B230-ECA5-48B0-9F8A-15AF8E06F92D}</ProjectGuid>
+    <ProjectGuid>{FCBD7B94-A900-40D6-B9C5-DD85261024E5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TestVideo</RootNamespace>
+    <RootNamespace>TestImageShow</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -159,7 +159,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="MatrixVideo.cpp" />
+    <ClCompile Include="TestImageShow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
