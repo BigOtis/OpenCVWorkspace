@@ -1,5 +1,5 @@
 /**
-@file videocapture_basic.cpp
+@file MatrixVideo.cpp
 @brief Reads in video from the default camera and makes it look like the matrix. 
 	   Data is saved to a file named matrix.mp4
 @author Phillip Lopez - pgl5711@rit.edu
