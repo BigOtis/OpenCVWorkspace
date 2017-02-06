@@ -242,3 +242,4 @@ ModelManifest.xml
 .fake/
 /TestVideo/matrix_test.mp4
 /TestVideo/test_canny.avi
+/data/dogs

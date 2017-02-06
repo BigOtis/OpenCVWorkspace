@@ -61,8 +61,7 @@ int main(int, char**)
 		BGRChannels[2] = Mat::zeros(edges.rows, edges.cols, CV_8UC1);// removing Green channel
 		merge(BGRChannels, 3, edges); // pack the image 
 		
-		
-		writer.write(edges);
+		//writer.write(edges);
 		imshow("Live", edges);
 		if (waitKey(30) >= 0) {
 			break;
