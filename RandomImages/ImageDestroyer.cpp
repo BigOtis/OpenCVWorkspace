@@ -3,6 +3,8 @@
 // the process continues until the program is directed to stop
 // This will destroy the images
 //
+// @author Phillip Lopez - pgl5711@rit.edu
+//
 
 #include "stdafx.h"
 #include <opencv2/opencv.hpp>
@@ -51,7 +53,7 @@ int main()
 			imwrite(filenames[i], mod);
 
 			// See if the user wants to quit
-			if (waitKey(300) >= 0) {
+			if (waitKey(10) >= 0) {
 				done = true;
 				break;
 			}
