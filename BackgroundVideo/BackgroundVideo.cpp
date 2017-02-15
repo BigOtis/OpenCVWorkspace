@@ -37,14 +37,13 @@ int main()
 		pMOG2->apply(frame, fgMaskMOG2);
 
 		// Erosion settings
-		int erosion_size = 2;
+		int erosion_size = 1;
 		Mat element = getStructuringElement(MORPH_ERODE,
 			Size(2 * erosion_size + 1, 2 * erosion_size + 1),
 			Point(erosion_size, erosion_size));
 
 		// Apply erosion then dilation on the image (opening)
 		erode(fgMaskMOG2, fgMaskMOG2, element);
-		dilate(fgMaskMOG2, fgMaskMOG2,element);
 
 		// Set all masked pixels to be pure red
 		Mat masked;
