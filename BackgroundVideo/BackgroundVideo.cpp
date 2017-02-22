@@ -1,4 +1,5 @@
-// BackgroundVideo.cpp : Defines the entry point for the console application.
+// BackgroundVideo.cpp : Uses a MOG2 background subtractor
+// to automatically remove the background of the input video
 //
 
 #include "stdafx.h"
@@ -42,7 +43,7 @@ int main()
 			Size(2 * erosion_size + 1, 2 * erosion_size + 1),
 			Point(erosion_size, erosion_size));
 
-		// Apply erosion then dilation on the image (opening)
+		// Erode the image to get rid of the flicker noise
 		erode(fgMaskMOG2, fgMaskMOG2, element);
 
 		// Set all masked pixels to be pure red
