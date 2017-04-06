@@ -25,16 +25,16 @@ Mat im_std;
 
 // How many standard deviations we will use
 // to check for motion in the image
-int STD_THRESHOLD = 2;
+int STD_THRESHOLD = 2.5;
 
 // Main method for Diver
 int main()
 {
 	cout << "Starting diver stop-motion collage creator...\n";
-	cout << "Using the following file [../data/diver/diver1.mov]\n";
+	cout << "Using the following file [../data/dogs2.mp4]\n";
 
 	// Load in the video
-	VideoCapture cap("../data/diver/diver1.mov");
+	VideoCapture cap("../data/dogs2.mp4");
 	Mat frame;
 	Mat gray;
 
@@ -57,7 +57,7 @@ int main()
 	for (;!done;) {
 		Mat brightest;
 		int max_lum = 0;
-		for (int i = 0; i <= 3; i++) {
+		for (int i = 0; i <= 0; i++) {
 			// If we hit the end of the video, quit
 			if (!cap.read(frame)) {
 				done = true;
@@ -72,21 +72,23 @@ int main()
 				max_lum = lum;
 			}
 		}
-		// Add the brightest frames to our vector 
-		brightestFrames.push_back(brightest);
-		numFrames++;
-		// Now add it's average intensity to the average Mat
-		if (first) {
-			first = false;
-			brightest.copyTo(im_avg);
-			cvtColor(im_avg, im_avg, CV_RGB2GRAY);
-			im_avg.convertTo(im_avg, CV_32F);
-		}
-		else {
-			Mat gray;
-			cvtColor(brightest, gray, CV_RGB2GRAY);
-			gray.convertTo(gray, CV_32F);
-			add(im_avg, gray, im_avg);
+		if (!done) {
+			// Add the brightest frames to our vector 
+			brightestFrames.push_back(brightest);
+			numFrames++;
+			// Now add it's average intensity to the average Mat
+			if (first) {
+				first = false;
+				brightest.copyTo(im_avg);
+				cvtColor(im_avg, im_avg, CV_RGB2GRAY);
+				im_avg.convertTo(im_avg, CV_32F);
+			}
+			else {
+				Mat gray;
+				cvtColor(brightest, gray, CV_RGB2GRAY);
+				gray.convertTo(gray, CV_32F);
+				add(im_avg, gray, im_avg);
+			}
 		}
 	}
 	
@@ -168,6 +170,7 @@ int main()
 	imshow("background average", im_avg);
 
 	// Show the combined image
+	GaussianBlur(im_combined, im_combined, Size(9, 9), 1);
 	imshow("combined", im_combined);
 
 	waitKey();
