@@ -32,7 +32,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleApplication1.cpp">
+    <ClCompile Include="CameraCalibration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestCalibrationcpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
